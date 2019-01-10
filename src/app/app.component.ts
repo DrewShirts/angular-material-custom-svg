@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PdfIconService } from './services/pdf-icon.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  constructor(
+    private pdfIconService: PdfIconService
+  ) {
+
+    // using service to register pdf icons
+    this.pdfIconService.init();
+
+  }
+
 }
